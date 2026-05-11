@@ -1,0 +1,100 @@
+schema: "hugoblox/author/v1"
+slug: "me"
+is_owner: true
+name:
+  display: "柯嵩宇"
+  given: "嵩宇"
+  family: "柯"
+  alternate: "Songyu Ke"
+  pronunciation: ""
+  pronouns: "he/him"
+postnominals:
+  - "PhD"
+  - ""
+status:
+  icon: "☕️"
+role: "副教授"
+bio: |
+  柯嵩宇，福州大学副教授，研究方向包括城市计算、时空数据挖掘与建模、低质量数据表示学习。曾在 Artificial Intelligence、IEEE TKDE 等期刊以及 AAAI、IJCAI、IJCNN 等国际会议上发表多篇论文，并担任 AAAI、WSDM、KDD、CIKM 等会议的程序委员会委员/审稿人。
+affiliations:
+  - name: "福州大学"
+    url: "https://ccds.fzu.edu.cn"
+links:
+  - icon: "hero/at-symbol"
+    url: "mailto:songyuke@fzu.edu.cn"
+    label: "电子邮箱"
+  - icon: "brands/github"
+    url: "https://github.com/croissantfish"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.com/citations?user=N_4dXZUAAAAJ"
+  - icon: "academicons/orcid"
+    url: "https://orcid.org/0000-0001-7184-8074"
+    label: "ORCID"
+interests:
+  - "城市计算"
+  - "时空数据挖掘与建模"
+  - "人工智能"
+education:
+  - degree: "计算机科学博士"
+    institution: "上海交通大学"
+    start: "2018-09-01"
+    end: "2024-09-30"
+    summary: ""
+  - degree: "工学学士"
+    institution: "上海交通大学"
+    start: "2014-09-01"
+    end: "2018-06-30"
+    summary: ""
+experience:
+  - role: "副教授"
+    org: "福州大学计算机与大数据学院"
+    start: "2024-10-08"
+    end: ""
+    summary: |
+      《编译原理》及《编译原理实践》课程主讲教师。
+      研究兴趣为时空数据的分析、挖掘与建模。
+  - role: "实习生"
+    org: "京东科技、京东智能城市大数据研究院"
+    start: "2019-06-01"
+    end: "2024-09-30"
+    summary: |
+      参与研究院承接的各类科研项目，负责时空数据挖掘与AI算法的设计与开发。
+      参与智能语音降噪模块研发，使用ONNX运行时在多种终端设备上实现有硬件加速的实时推理并通过参数调优降低推理延迟。
+  - role: "实习生"
+    org: "京东金融"
+    start: "2018-06-01"
+    end: "2018-09-30"
+    summary: |
+      参与“城市操作系统”研发与基于手机信令数据的智慧选址方案调研。
+  - role: "实习生"
+    org: "微软亚洲研究院"
+    start: "2017-06-01"
+    end: "2018-06-30"
+    summary: |
+      参与时空数据挖掘相关研究项目，主要负责空气质量数据的分析与建模。
+skills:
+  - name: "技术技能"
+    items:
+      - label: "Python"
+        level: 5
+      - label: "机器学习"
+        level: 5
+      - label: "云计算"
+        level: 4
+  - name: "研究与交流"
+    items:
+      - label: "学术写作"
+        level: 5
+      - label: "会议报告"
+        level: 4
+languages:
+  - name: "中文"
+    level: 5
+    label: "母语"
+  - name: "英文"
+    level: 4
+    label: "流利"
+awards: []
+ids:
+  orcid: "0000-0001-7184-8074"
+  google_scholar: "N_4dXZUAAAAJ"

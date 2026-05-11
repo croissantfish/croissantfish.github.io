@@ -8,15 +8,34 @@ en:
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
   #contentDir: content/en
 
-# Uncomment the lines below to configure your website in a second language.
-#zh:
-#  locale: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+# Chinese
+zh:
+  locale: zh-Hans
+  # Move Chinese content into `zh` sub-folder for single-file pages.
+  contentDir: content/zh
+  title: "柯嵩宇"
+  params:
+    description: "柯嵩宇 - 福州大学副教授，研究方向包括城市计算、时空数据挖掘与建模、低质量数据表示学习。"
+  menu:
+    main:
+      - name: 简介
+        url: /
+        weight: 10
+      - name: 论文
+        url: /#papers
+        weight: 11
+      - name: 报告
+        url: /#talks
+        weight: 12
+      - name: 动态
+        url: /#news
+        weight: 13
+      - name: 经历
+        url: experience/
+        weight: 20
+      - name: 项目
+        url: projects/
+        weight: 30
+      - name: 课程
+        url: courses/
+        weight: 40

@@ -13,7 +13,7 @@ sections:
       text: ''
       # Show a call-to-action button under your biography? (optional)
       button:
-        text: Download CV
+        text: 下载简历
         url: uploads/resume.pdf
       headings:
         about: ''
@@ -35,20 +35,18 @@ sections:
         shape: circle # Options: circle (default), square, rounded
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: '📚 我的研究'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        我的研究聚焦于城市计算与时空数据挖掘，致力于利用机器学习和深度学习技术解决智慧城市中的实际问题，如空气质量预测、交通流量预测、地理传感数据推断等。
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-
-        Please reach out to collaborate 😃
+        欢迎交流合作 😃
     design:
       columns: '1'
   - block: collection
     id: papers
     content:
-      title: Featured Publications
+      title: 代表性论文
       filters:
         folders:
           - publications
@@ -58,7 +56,7 @@ sections:
       columns: 2
   - block: collection
     content:
-      title: Recent Publications
+      title: 近期论文
       text: ''
       filters:
         folders:
@@ -69,7 +67,7 @@ sections:
   - block: collection
     id: talks
     content:
-      title: Recent & Upcoming Talks
+      title: 近期报告
       filters:
         folders:
           - events
@@ -78,7 +76,7 @@ sections:
   - block: collection
     id: news
     content:
-      title: Recent News
+      title: 最新动态
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...

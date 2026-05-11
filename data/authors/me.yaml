@@ -1,116 +1,96 @@
-schema: hugoblox/author/v1
-slug: me
+schema: "hugoblox/author/v1"
+slug: "me"
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
-  pronouns: he/him
+  display: "Songyu Ke"
+  given: "Songyu"
+  family: "Ke"
+  alternate: "柯嵩宇"
+  pronunciation: ""
+  pronouns: "he/him"
 postnominals:
-  - PhD
-  - MIEEE
+  - "PhD"
+  - ""
 status:
   icon: "☕️"
-role: Senior AI Research Scientist
-bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
-
+role: "Associate Professor"
+bio: "Songyu Ke is an associate professor at Fuzhou University. His research interests include urban computing, spatiotemporal data mining and modeling, and representation learning for low-quality data. He has published numerous papers in journals such as Artificial Intelligence, IEEE Transactions on Knowledge and Data Engineering, and international conferences such as AAAI, IJCAI, and IJCNN, and has served as a program committee member/reviewer for conferences such as AAAI, WSDM, KDD, and CIKM."
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
-
+  - name: "Fuzhou University"
+    url: "https://ccds.fzu.edu.cn"
 links:
-  - icon: at-symbol
-    url: mailto:alex.johnson@example.com
-    label: E-mail Me
-  - icon: brands/x
-    url: https://x.com/example
-  - icon: brands/github
-    url: https://github.com/example
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
-
+  - icon: "hero/at-symbol"
+    url: "mailto:songyuke@fzu.edu.cn"
+    label: "Email"
+  - icon: "brands/github"
+    url: "https://github.com/croissantfish"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.com/citations?user=N_4dXZUAAAAJ"
+  - icon: "academicons/orcid"
+    url: "https://orcid.org/0000-0001-7184-8074"
+    label: "ORCID"
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
-
+  - "Urban Computing"
+  - "Spatio-Temporal Data Mining and Modeling"
+  - "AI"
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
-    summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
-
+  - degree: "PhD in Computer Science"
+    institution: "Shanghai Jiao Tong University"
+    start: "2018-09-01"
+    end: "2024-09-30"
+    summary: ""
+  - degree: "Bachelor of Engineering"
+    institution: "Shanghai Jiao Tong University"
+    start: "2014-09-01"
+    end: "2018-06-30"
+    summary: ""
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  - role: "Associate Professor"
+    org: "Fuzhou University, College of Computer and Data Science"
+    start: "2024-10-08"
+    end: ""
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
-    button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
+      Lecturer for Principles of Compilation and Practice of Compilation Principles.
+      Research interests: spatio-temporal data analysis, mining, and modeling.
+  - role: "Intern"
+    org: "JD Technology, JD Intelligent Cities Research"
+    start: "2019-06-01"
+    end: "2024-09-30"
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
-
+      Participated in various research projects on spatio-temporal data mining and AI algorithm design.
+      Contributed to the development of an intelligent voice noise reduction module, achieving hardware-accelerated real-time inference on multiple terminal devices via ONNX runtime with parameter tuning to reduce inference latency.
+  - role: "Intern"
+    org: "JD Finance"
+    start: "2018-06-01"
+    end: "2018-09-30"
+    summary: |
+      Participated in the development of the "City Operating System" and research on smart site selection based on mobile signaling data.
+  - role: "Intern"
+    org: "Microsoft Research Asia"
+    start: "2017-06-01"
+    end: "2018-06-30"
+    summary: |
+      Participated in spatio-temporal data mining research projects, primarily responsible for air quality data analysis and modeling.
 skills:
-  - name: Technical Skills
+  - name: "Technical Skills"
     items:
-      - label: Python
+      - label: "Python"
         level: 5
-      - label: Machine Learning
+      - label: "Machine Learning"
         level: 5
-      - label: Cloud Computing
+      - label: "Cloud Computing"
         level: 4
-  - name: Research & Communication
+  - name: "Research & Communication"
     items:
-      - label: Academic Writing
+      - label: "Academic Writing"
         level: 5
-      - label: Conference Presentations
+      - label: "Conference Presentations"
         level: 4
-      - label: Grant Proposals
-        level: 4
-
 languages:
-  - name: English
-    level: 5
-    label: Native
-  - name: Spanish
+  - name: "English"
     level: 4
-    label: Fluent
-
-awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+    label: "Advanced"
+awards: []
+ids:
+  orcid: "0000-0001-7184-8074"
+  google_scholar: "N_4dXZUAAAAJ"
