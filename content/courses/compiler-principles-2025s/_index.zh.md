@@ -1,6 +1,6 @@
 ---
 title: "编译原理 (Principles of Compilation)"
-linkTitle: "编译原理"
+linkTitle: "编译原理 (2025春)"
 date: "2025-02-01T00:00:00Z"
 type: docs
 tags:
@@ -8,25 +8,21 @@ tags:
 summary: |
   本课程是计算机科学与技术专业的核心课程，系统介绍编译器构造的基本原理与实现技术，
   包括词法分析、语法分析、语义分析、中间代码生成与优化等内容。
-  
-  This course is a core curriculum for computer science majors, systematically introducing 
-  the basic principles and implementation techniques of compiler construction, including 
-  lexical analysis, syntax analysis, semantic analysis, intermediate code generation, and optimization.
 
 authors:
-  - me
+  - Songyu Ke
 
 ---
 
-## 课程信息 / Course Information
+## 课程信息
 
 - **课程名称**: 编译原理 / Principles of Compilation
-- **开课学期**: 2025 春季学期
+- **开课学期**: 2025 春季学期（历史归档）
 - **授课教师**: 柯嵩宇 副教授
 - **开课单位**: 福州大学计算机与大数据学院
 - **授课对象**: 计算机科学与技术专业本科生
 
-## 课程简介 / Course Description
+## 课程简介
 
 本课程系统介绍编译器构造的基本原理与实现技术。通过本课程的学习，学生将理解高级程序设计语言如何被转换为机器可执行代码，掌握编译器各核心模块的设计方法与实现技术。
 
@@ -38,7 +34,7 @@ authors:
 - 中间代码生成与优化
 - 目标代码生成
 
-## 教材与参考书 / Textbooks
+## 教材与参考书
 
 - **主教材**: Alfred V. Aho 等,《编译原理》(龙书), 机械工业出版社
 - **参考书**: Andrew W. Appel,《Modern Compiler Implementation in C》
