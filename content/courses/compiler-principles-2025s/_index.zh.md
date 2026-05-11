@@ -1,5 +1,5 @@
 ---
-title: "编译原理 (Principles of Compilation)"
+title: "编译原理 (Principles of Compilation, 2025春)"
 linkTitle: "编译原理 (2025春)"
 date: "2025-02-01T00:00:00Z"
 type: docs
