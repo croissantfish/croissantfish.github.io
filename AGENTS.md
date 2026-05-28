@@ -6,12 +6,13 @@
 
 ## Project Overview
 
-This is a **HugoBlox Academic CV** starter template — a static site built with [Hugo](https://gohugo.io/) and the [HugoBlox](https://hugoblox.com/) framework. It produces a personal academic/portfolio website (bio, publications, projects, talks, courses, blog) from plain Markdown and YAML files.
+This is a **HugoBlox Academic CV** site — a static site built with [Hugo](https://gohugo.io/) and the [HugoBlox](https://hugoblox.com/) framework. It produces a personal academic/portfolio website (bio, publications, projects, talks, courses, blog) from plain Markdown and YAML files.
 
 - **Repository purpose**: Personal academic website
-- **Primary audience**: Researchers, academics, PhD students
+- **Site owner**: Songyu Ke (柯嵩宇), Associate Professor at Fuzhou University
+- **Primary audience**: Researchers, academics, students
 - **License**: MIT
-- **Content language**: English (with optional multi-language support)
+- **Content language**: English + Chinese (bilingual, multi-language enabled)
 
 ---
 
@@ -27,7 +28,7 @@ This is a **HugoBlox Academic CV** starter template — a static site built with
 | **Search** | Pagefind 1.4.x | Static search index generation |
 | **Runtime** | Node.js 22 | Required for Tailwind and Pagefind |
 | **Go** | 1.19+ (CI uses 1.21–1.23) | Hugo module resolution |
-| **Hosting** | GitHub Pages (default) | Static site deployment |
+| **Hosting** | GitHub Pages | Static site deployment |
 
 ### Hugo Modules (Go)
 
@@ -46,8 +47,8 @@ The site imports HugoBlox modules via `go.mod`:
 ├── config/_default/          # Hugo configuration
 │   ├── hugo.yaml             # Core Hugo settings (baseURL, outputs, imaging, taxonomies)
 │   ├── params.yaml           # HugoBlox parameters (identity, theme, layout, SEO, analytics)
-│   ├── menus.yaml            # Navigation menu items
-│   ├── languages.yaml        # Language/i18n configuration
+│   ├── menus.yaml            # Navigation menu items (English)
+│   ├── languages.yaml        # Language/i18n configuration (en + zh)
 │   └── module.yaml           # Hugo module imports and mount points
 ├── content/                  # All site content (Markdown + YAML front matter)
 │   ├── _index.md             # Homepage — a landing page composed of "blocks"
@@ -58,16 +59,35 @@ The site imports HugoBlox modules via `go.mod`:
 │   ├── events/               # Talks, workshops, conferences
 │   ├── courses/              # Course documentation (docs layout)
 │   ├── slides/               # Markdown-based slide decks
+│   ├── zh/                   # Chinese content (pages, experience, etc.)
 │   └── experience.md         # Experience/resume landing page
 ├── data/
-│   └── authors/
-│       └── me.yaml           # Author metadata (bio, education, skills, social links)
+│   ├── authors/
+│   │   └── me.yaml           # Author metadata (bio, education, skills, social links)
+│   └── zh/
+│       └── authors/
+│           └── me.yaml       # Chinese author metadata (bio, affiliations, etc.)
 ├── layouts/
-│   └── _partials/            # Custom layout overrides (e.g., HTML hooks)
+│   ├── baseof.html           # Custom base HTML skeleton
+│   ├── single.html           # Custom single-page layout
+│   └── _partials/            # Custom layout overrides
+│       ├── components/
+│       │   └── search-modal.html
+│       ├── docs_layout.html  # Docs layout (widened to 80vw)
+│       ├── hooks/
+│       │   └── head-end/
+│       ├── page_metadata_authors.html
+│       ├── site_footer.html
+│       ├── site_head.html
+│       └── views/
+│           └── card.html
 ├── assets/
 │   └── media/                # Site media assets processed by Hugo pipeline
+│       └── authors/
+│           └── me.jpg        # Author avatar
 ├── static/
 │   └── uploads/              # Static files served as-is (e.g., PDFs)
+│       └── slides/           # Course slide PDFs
 ├── .github/workflows/         # CI/CD automation
 ├── hugoblox.yaml             # HugoBlox project metadata (template ID, deploy target, Hugo version)
 ├── go.mod                    # Go module dependencies
@@ -88,12 +108,24 @@ All content lives in `content/` as Markdown files with **YAML front matter**.
 | **Publication** | `content/publications/<slug>/index.md` | `authors`, `publication_types`, `abstract`, `doi`, `featured` |
 | **Project** | `content/projects/<slug>/index.md` | `title`, `date`, `links`, `tags` |
 | **Event/Talk** | `content/events/<slug>/index.md` | `event_name`, `event_start`, `location`, `slides` |
-| **Course** | `content/courses/<course>/<page>.md` | `type: docs`, `linkTitle` |
+| **Course** | `content/courses/<slug>/_index.md` | `type: docs`, `linkTitle`, `authors` |
+| **Course Slides** | `content/courses/<slug>/slides.md` | `type: docs`, links to `uploads/slides/` PDFs |
 | **Slides** | `content/slides/<slug>/index.md` | `type: slides`, `slides.theme` |
+| **Chinese Page** | `content/zh/<page>.md` | Single-file pages (e.g., `experience.md`) |
+| **Bilingual Content** | `content/<type>/<slug>/index.md` + `index.zh.md` | Parallel files for publications, courses, events, etc. |
+| **Bilingual List Page** | `content/<type>/_index.zh.md` | Chinese title/translation for section index |
 
 **Images**: Place `featured.jpg` or `featured.png` inside the content folder alongside `index.md` to associate a thumbnail.
 
 **BibTeX**: Publications can include a `cite.bib` file in the same folder for citation metadata. A `publications.bib` at repo root triggers an automated import workflow.
+
+**Multi-language**: Chinese content follows two patterns:
+1. **Parallel files**: For collection items (publications, courses, events, projects, blog posts), place `index.zh.md` alongside `index.md` in the same folder.
+2. **Dedicated directory**: For single-file pages (e.g., `experience.md`), place the Chinese version in `content/zh/<page>.md`.
+
+Section list pages use `_index.zh.md` for Chinese titles. Chinese menu items are configured in `config/_default/languages.yaml` under the `zh` section.
+
+**Course slides**: Lecture slide PDFs are stored in `static/uploads/slides/<course>/` and linked from `slides.md` / `slides.zh.md`.
 
 ---
 
@@ -184,10 +216,18 @@ Core Hugo settings:
 
 - `baseURL`: Set to your production domain
 - `defaultContentLanguage`: `en`
+- `hasCJKLanguage`: `true` — Enables CJK (Chinese/Japanese/Korean) language features
 - `taxonomies`: `authors`, `tags`, `publication_types`
 - `outputs.home`: `HTML`, `RSS`, `headers`, `redirects`, `backlinks`
 - `imaging.quality`: `90`
 - `ignoreFiles`: Jupyter checkpoints, R Markdown cache
+
+### `config/_default/languages.yaml`
+
+Multi-language configuration:
+
+- `en`: English (default), locale `en-us`
+- `zh`: Chinese, locale `zh-Hans`, content dir `content/zh/`, custom menu and metadata
 
 ---
 
@@ -220,35 +260,65 @@ sections:
 
 Common blocks: `resume-biography-3`, `collection`, `markdown`, `cta-card`, `resume-experience`, `resume-skills`, `resume-awards`, `resume-languages`.
 
+The current homepage includes:
+- `resume-biography-3` — Bio, avatar, and CV download button
+- `markdown` — "My Research" narrative section
+- `collection` (id: papers) — Featured Publications grid
+- `collection` — Recent Publications citation list
+- `collection` (id: talks) — Recent & Upcoming Talks cards
+- `collection` (id: news) — Recent News blog cards
+
 ### Author Profile
 
 Author data is stored in `data/authors/<username>.yaml` with schema `hugoblox/author/v1`:
 
 ```yaml
-schema: hugoblox/author/v1
-slug: me
+schema: "hugoblox/author/v1"
+slug: "me"
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-role: Senior AI Research Scientist
+  display: "Songyu Ke"
+  given: "Songyu"
+  family: "Ke"
+  alternate: "柯嵩宇"
+  pronouns: "he/him"
+role: "Associate Professor"
 bio: |
-  Research scientist at ...
+  Songyu Ke is an associate professor at Fuzhou University...
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: "Fuzhou University"
+    url: "https://ccds.fzu.edu.cn"
 links:
-  - icon: brands/github
-    url: https://github.com/example
+  - icon: "hero/at-symbol"
+    url: "mailto:songyuke@fzu.edu.cn"
+    label: "Email"
+  - icon: "brands/github"
+    url: "https://github.com/croissantfish"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.com/citations?user=N_4dXZUAAAAJ"
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
+  - degree: "PhD in Computer Science"
+    institution: "Shanghai Jiao Tong University"
+    start: "2018-09-01"
+    end: "2024-09-30"
+experience:
+  - role: "Associate Professor"
+    org: "Fuzhou University, College of Computer and Data Science"
+    start: "2024-10-08"
+skills:
+  - name: "Technical Skills"
+    items:
+      - label: "Python"
+        level: 5
+languages:
+  - name: "English"
+    level: 4
+    label: "Advanced"
 ```
 
 To publish author profile pages, remove the `build.render: never` settings from `content/authors/_index.md`.
+
+**Bilingual authors**: Maintain a parallel Chinese author file at `data/zh/authors/me.yaml` with the same schema. The Chinese version is used when rendering Chinese pages.
 
 ### Publications
 
@@ -260,6 +330,8 @@ Each publication is a folder in `content/publications/<slug>/` containing:
 - `<filename>.pdf` (optional) — PDF download
 
 Front matter supports: `authors`, `publication_types` (CSL standard), `abstract`, `doi`, `featured`, `links` (pdf, code, dataset, slides, video).
+
+**Bilingual publications**: Place `index.zh.md` in the same folder as `index.md` to provide a Chinese translation of the publication page. Both files share the same `featured.jpg` and `cite.bib` if present.
 
 ### Shortcodes
 
@@ -308,6 +380,24 @@ All automation is in `.github/workflows/`.
 - **Action**: Updates README news section from HugoBlox RSS feed
 - Only runs on the `HugoBlox` organization repository; safe to delete for end users
 
+## Custom Layout Overrides
+
+This repository includes extensive custom layout overrides in `layouts/`:
+
+| File | Purpose |
+|------|---------|
+| `layouts/baseof.html` | Custom base HTML skeleton |
+| `layouts/single.html` | Custom single-page layout (publications, posts, etc.) |
+| `layouts/_partials/site_head.html` | Custom `<head>` injection (SEO, analytics, fonts) |
+| `layouts/_partials/site_footer.html` | Custom footer partial |
+| `layouts/_partials/page_metadata_authors.html` | Author metadata rendering with custom logic |
+| `layouts/_partials/views/card.html` | Card view component for collections |
+| `layouts/_partials/components/search-modal.html` | Custom Pagefind search modal |
+| `layouts/_partials/docs_layout.html` | Docs layout with main content widened to `80vw` |
+| `layouts/_partials/hooks/head-end/` | Hook for injecting code before `</head>` |
+
+> **Note**: When upgrading HugoBlox, verify that custom layouts remain compatible with upstream partial signatures.
+
 ### Netlify (Alternative Host)
 
 `netlify.toml` provides a complete build configuration with verbose logging, Hugo/Pagefind build steps, and deploy-preview/branch-deploy contexts.
@@ -344,6 +434,7 @@ Common issues to watch for:
 - Missing `@tailwindcss/cli` dependency (Hugo >= 0.161.0 requires it)
 - Hugo module resolution failures (run `hugo mod get` and `hugo mod tidy`)
 - Invalid YAML front matter (use a YAML linter)
+- Bilingual content not rendering: ensure `index.zh.md` is in the same folder as `index.md`, not in `content/zh/` (the latter is only for single-file pages)
 
 ---
 
@@ -366,12 +457,17 @@ Common issues to watch for:
 | Add a publication | Create `content/publications/<slug>/index.md` + optional `cite.bib` and `featured.jpg` |
 | Update author bio | Edit `data/authors/me.yaml` |
 | Change site colors | Edit `config/_default/params.yaml` → `hugoblox.theme.colors` |
-| Add navigation link | Edit `config/_default/menus.yaml` → `main:` |
+| Add navigation link | Edit `config/_default/menus.yaml` → `main:` (English) or `languages.yaml` → `zh.menu.main` (Chinese) |
 | Add analytics | Edit `config/_default/params.yaml` → `hugoblox.analytics` |
 | Customize homepage | Edit `content/_index.md` → `sections:` blocks |
 | Override a partial | Create file in `layouts/_partials/` matching HugoBlox partial path |
 | Update Hugo version | Edit `hugoblox.yaml` → `build.hugo_version` and `.github/workflows/build.yml` |
 | Change deploy target | Edit `hugoblox.yaml` → `deploy.host` |
+| Add Chinese content | Create `content/zh/<page>.md` or mirror English structure under `content/zh/` |
+| Update Chinese menu | Edit `config/_default/languages.yaml` → `zh.menu.main` |
+| Add Chinese author bio | Edit `data/zh/authors/me.yaml` |
+| Customize layout override | Create/edit file in `layouts/` matching HugoBlox template path |
+| Add course slides | Place PDFs in `static/uploads/slides/<course>/` and link from `slides.md` |
 
 ---
 
