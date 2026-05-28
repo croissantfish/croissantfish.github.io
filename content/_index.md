@@ -38,11 +38,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        My research lies at the intersection of **spatio-temporal data mining**, **deep learning**, and **urban computing**. I develop intelligent algorithms to model, predict, and understand complex urban phenomena from large-scale sensory and mobility data.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        My recent work focuses on three themes: (1) **spatio-temporal forecasting** — designing efficient neural architectures (e.g., AirFormer, GeoMAN, VQGG) for traffic prediction, air-quality forecasting, and geo-sensory time-series analysis; (2) **automated machine learning for spatio-temporal graphs** — relieving the burden of hand-crafted model design via neural architecture search (AutoSTG / AutoSTG+, EAST) and meta-learning techniques; and (3) **self-supervised representation learning** — learning robust spatio-temporal representations from incomplete or scarce labeled data through masked autoencoders (GeoMAE) and contrastive learning (GSDI, CSST).
 
-        Please reach out to collaborate 😃
+        I am also interested in real-world urban applications such as anomaly detection, crowd-flow inference, and purchase prediction. I publish regularly in top-tier venues including *AAAI*, *WWW*, *IJCAI*, *IEEE TKDE*, *Artificial Intelligence*, *Neural Networks*, and *CIKM*. I am always open to collaborations on urban intelligence and spatio-temporal AI — feel free to reach out! 😃
     design:
       columns: '1'
   - block: collection
