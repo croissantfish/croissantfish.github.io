@@ -2,7 +2,7 @@
 title: "EAST: An Enhanced Automated Machine Learning Library for Spatio-Temporal Forecasting"
 
 authors:
-  - Songyu Ke
+  - me
   - Li Song
   - Kainan Bao
   - Zheyi Pan

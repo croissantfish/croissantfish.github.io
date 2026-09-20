@@ -2,7 +2,7 @@
 title: "GSDI: Spatio-Temporal Contrastive Learning for Geo-Sensory Data Inference"
 
 authors:
-  - Songyu Ke
+  - me
   - Yuxuan Liang
   - Xiuwen Yi
   - Junbo Zhang

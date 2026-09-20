@@ -5,7 +5,7 @@ authors:
   - Xiuwen Yi
   - Xiaodu Yang
   - Yanyong Huang
-  - Songyu Ke
+  - me
   - Junbo Zhang
   - Tianrui Li
   - Yu Zheng

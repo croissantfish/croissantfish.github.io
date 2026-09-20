@@ -2,7 +2,7 @@
 title: "GeoMAE: Masking Representation Learning for Spatio-Temporal Graph Forecasting with Missing Values"
 
 authors:
-  - Songyu Ke
+  - me
   - Chenyu Wu
   - Yuxuan Liang
   - Xiuwen Yi

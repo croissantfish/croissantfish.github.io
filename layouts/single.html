@@ -88,11 +88,11 @@
               <img src="{{ $avatar_32.RelPermalink }}" 
                    width="16"
                    height="16"
-                   alt="{{ if $profile.is_owner }}Songyu Ke{{ else }}{{ $profile.title }}{{ end }}" 
+                   alt="{{ $profile.title }}" 
                    class="inline-block h-4 w-4 rounded-full border border-current" 
                    loading="lazy" />
             {{ end }}
-            <div>{{ if $profile.is_owner }}<strong>Songyu Ke</strong>{{ else }}{{ $profile.title }}{{ end }}</div>
+            <div>{{ if $profile.is_owner }}<strong>{{ $profile.title }}</strong>{{ else }}{{ $profile.title }}{{ end }}</div>
           </div>
           {{/* Add author note tooltip if available */}}
           {{- if isset $.Params "author_notes" -}}

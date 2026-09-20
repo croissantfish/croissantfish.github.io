@@ -2,7 +2,7 @@
 title: "AutoSTG+: An Automatic Framework to Discover the Optimal Network for Spatio-Temporal Graph Prediction"
 
 authors:
-  - Songyu Ke
+  - me
   - Zheyi Pan
   - Tianfu He
   - Yuxuan Liang

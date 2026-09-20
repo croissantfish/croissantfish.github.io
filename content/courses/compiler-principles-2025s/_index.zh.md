@@ -10,7 +10,7 @@ summary: |
   包括词法分析、语法分析、语义分析、中间代码生成与优化等内容。
 
 authors:
-  - Songyu Ke
+  - me
 
 ---
 

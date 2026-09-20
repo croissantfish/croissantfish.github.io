@@ -4,7 +4,7 @@ title: "Efficient Spatio-Temporal Randomly Wired Neural Networks for Traffic For
 authors:
   - Li Song
   - Kainan Bao
-  - Songyu Ke
+  - me
   - Chunyang Li
   - Junbo Zhang
   - Yu Zheng

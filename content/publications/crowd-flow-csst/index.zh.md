@@ -2,7 +2,7 @@
 title: "Spatio-Temporal Contrastive Self-Supervised Learning for POI-level Crowd Flow Inference"
 
 authors:
-  - Songyu Ke
+  - me
   - Ting Li
   - Li Song
   - Yanping Sun

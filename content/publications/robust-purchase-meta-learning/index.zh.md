@@ -3,7 +3,7 @@ title: "Robust Spatio-Temporal Purchase Prediction via Deep Meta Learning"
 
 authors:
   - Huiling Qin
-  - Songyu Ke
+  - me
   - Xiaodu Yang
   - Haoran Xu
   - Xianyuan Zhan

@@ -2,7 +2,7 @@
 title: "VQGG: Generating Adaptive Graphs for Traffic Forecasting via a Vector-Quantized Graph Generator"
 
 authors:
-  - Songyu Ke
+  - me
   - Chenyu Wu
   - Jinjin Guo
   - Junbo Zhang

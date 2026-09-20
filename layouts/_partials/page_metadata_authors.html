@@ -15,12 +15,11 @@
     {{- $highlight_name := $profile.is_owner | default false -}}
 
     {{- if gt $index 0 }}, {{ end -}}
-    {{- $displayName := cond ($profile.is_owner | default false) "Songyu Ke" $display -}}
     <span {{ if $highlight_name }}class="font-bold"{{end}}>
       {{- if $termPage -}}
-        <a href="{{ $termPage.RelPermalink }}">{{ $displayName }}</a>
+        <a href="{{ $termPage.RelPermalink }}">{{ $display }}</a>
       {{- else -}}
-        {{ $displayName }}
+        {{ $display }}
       {{- end -}}
     </span>
     {{- if isset $.Params "author_notes" -}}
