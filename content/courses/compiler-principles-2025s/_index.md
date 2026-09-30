@@ -1,6 +1,6 @@
 ---
 title: "Principles of Compilation (Spring 2025)"
-linkTitle: "编译原理 (2025春)"
+linkTitle: "Principles of Compilation (2025 Spring)"
 date: "2025-02-01T00:00:00Z"
 type: docs
 tags:

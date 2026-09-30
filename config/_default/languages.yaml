@@ -19,6 +19,8 @@ zh:
     hugoblox:
       identity:
         name: "柯嵩宇"
+      locale:
+        date_format: "2006年1月2日"
   menu:
     main:
       - name: 简介
