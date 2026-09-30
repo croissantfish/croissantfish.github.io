@@ -32,9 +32,7 @@ hugoblox:
   ids:
     arxiv: "2309.03239"
 
-links:
-  - type: arxiv
-    url: "https://arxiv.org/abs/2309.03239"
+links: []
 
 projects: []
 

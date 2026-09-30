@@ -32,9 +32,7 @@ hugoblox:
   ids:
     doi: "10.1016/j.neunet.2026.108986"
 
-links:
-  - type: pdf
-    url: "https://doi.org/10.1016/j.neunet.2026.108986"
+links: []
 
 projects: []
 
