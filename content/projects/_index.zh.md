@@ -11,7 +11,7 @@ sections:
         folders:
           - projects
     design:
-      view: article-grid
+      view: project-grid
       columns: 1
       show_date: false
       show_read_time: false
