@@ -54,6 +54,7 @@ sections:
     design:
       view: article-grid
       columns: 2
+      fill_image: false
   - block: collection
     content:
       title: 近期论文
