@@ -2,6 +2,7 @@
 title: 'FCC ASM Lab'
 date: 2026-11-12
 summary: 'A browser-based SPIM/MIPS32 and RISC-V/RV32IM assembly debugger for compiler education.'
+share: false
 tags:
   - Compiler Education
   - Assembly

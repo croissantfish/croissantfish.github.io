@@ -2,6 +2,7 @@
 title: 'FCC ASM Lab 汇编调试器'
 date: 2026-11-12
 summary: '面向编译原理课程的浏览器汇编调试器，支持 SPIM/MIPS32 与 RISC-V/RV32IM。'
+share: false
 tags:
   - 编译原理
   - 汇编
