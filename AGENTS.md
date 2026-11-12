@@ -88,6 +88,7 @@ The site imports HugoBlox modules via `go.mod`:
 ├── static/
 │   └── uploads/              # Static files served as-is (e.g., PDFs)
 │       └── slides/           # Course slide PDFs
+├── projects/                 # Standalone app submodules built into public/projects/
 ├── .github/workflows/         # CI/CD automation
 ├── hugoblox.yaml             # HugoBlox project metadata (template ID, deploy target, Hugo version)
 ├── go.mod                    # Go module dependencies
@@ -360,7 +361,7 @@ All automation is in `.github/workflows/`.
 ### `build.yml`
 
 - **Trigger**: Pull requests to `main`, reusable workflow call, manual dispatch
-- **Steps**: Checkout → Setup Node/pnpm → Setup Hugo → Install deps → Build (`hugo --minify`) → Pagefind index → Upload artifact
+- **Steps**: Checkout with submodules → Setup Node/pnpm → Setup Hugo → Install deps → Build (`hugo --minify`) → Pagefind index → Build standalone apps in `projects/` → Upload artifact
 - **Caching**: Go modules, `node_modules/`, and Hugo `resources/` are cached
 
 ### `upgrade.yml`

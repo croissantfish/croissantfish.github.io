@@ -1,0 +1,3 @@
+[submodule "projects/fcc-web-simulator"]
+	path = projects/fcc-web-simulator
+	url = https://github.com/croissantfish/fcc-web-simulator.git

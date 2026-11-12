@@ -38,6 +38,7 @@ jobs:
       with:
         # Fetch history for Hugo's .GitInfo and .Lastmod
         fetch-depth: 0
+        submodules: recursive
 
     - name: Setup Node.js
       uses: actions/setup-node@v6
@@ -140,6 +141,17 @@ jobs:
         if [ -f "package.json" ] && grep -q "pagefind" package.json; then
           pnpm run pagefind || npx pagefind --site "public"
         fi
+
+    - name: Build FCC ASM Lab
+      working-directory: projects/fcc-web-simulator
+      run: |
+        npm ci
+        npm run build -- --base=/projects/fcc-web-simulator/
+
+    - name: Add FCC ASM Lab to site
+      run: |
+        mkdir -p public/projects/fcc-web-simulator
+        cp -R projects/fcc-web-simulator/dist/. public/projects/fcc-web-simulator/
 
     - name: Upload artifact
       id: upload
